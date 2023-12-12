@@ -1,6 +1,8 @@
 # AI_Team5
 This is a GitHub repository for a team project in an Artificial Intelligence class.
+
 Team members: 20102128 Yujung Hwang, 17102063 Yooseok Lee, 17102047 Jihoon Moon
+
 > **Google Drive containing all our code files, datasets, and models**: https://drive.google.com/drive/folders/15xNLqFqYo6bK5Jg3ehTNBYbANsL_2Cu8?usp=drive_link
 
 
