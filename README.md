@@ -84,12 +84,14 @@ second frame of the video.
 > Training loss curve of four audio emotion classification model
 
 + 1) LSTM, 2. 1D CNN, 3. LSTM with Attention, and 4. GRU
+
 ![image](https://github.com/HwnagYujeong0808/AI_Team5/assets/66208800/a9dd68a6-868d-4f63-bf7f-2a91c70ae854)
 
 > Video highlight classification model
 
 + The graph above shows the result of highlighting using only audio, and the graph below shows the result of highlighting using video and audio.
 + 1. LSTM, 2. 1D CNN, 3. LSTM with Attention, and 4. GRU
+
 ![image](https://github.com/HwnagYujeong0808/AI_Team5/assets/66208800/40b37feb-2b60-41e1-b7e8-6cb85f20c77e)
 
 + From left, Audio highlight extraction model, Multimodal highlight extraction 
