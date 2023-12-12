@@ -1,6 +1,8 @@
 # AI_Team5
 This is a GitHub repository for a team project in an Artificial Intelligence class.
-+ **Google Drive containing all our code files, datasets, and models**: https://drive.google.com/drive/folders/15xNLqFqYo6bK5Jg3ehTNBYbANsL_2Cu8?usp=drive_link
+> **Google Drive containing all our code files, datasets, and models**: https://drive.google.com/drive/folders/15xNLqFqYo6bK5Jg3ehTNBYbANsL_2Cu8?usp=drive_link
+
+> Team members: 20102128 Yujung Hwang, 17102063 Yooseok Lee, 17102047 Jihoon Moon
 
 ## Motivation for the project and an explanation of the problem statement
 > Motivation for the project
@@ -36,23 +38,77 @@ From the perspective of video content creators, manually editing long videos whi
   - **Link**: [AIHUB\_Dataset](https://www.aihub.or.kr/aihubdata/data/view.do?dataSetSn=616)
   - **Information**: The AI HUB dataset on video content highlight editing and description (summarization) is a training dataset constructed by labeling the positions of key scenes in news and YouTube videos and tagging them for category items
 
-## Hyperparameter and architecture choices that were explored
+## Model Hyperparameter and architecture choices that were explored
+
+> Model hyperparameters
+
++ **learning_rate**: The step size at each iteration while moving toward a minimum of a loss function. In this case, it was set to 0.001.
+
++ **epochs**: The number of complete passes through the training dataset. it was set to 100.
+
++ **input_size**: The number of expected features in the input x. It was 32 for this model.
+
++ **hidden_size**: The number of features in the hidden state h. It was set to 128.
+
++ **output_size**: The number of features in the output y, or the size of the output layer. For this model, it was 7, which often corresponds to the number of classes in a classification task.
+
++ **num_layers**: The number of recurrent layers (e.g., number of stacked LSTMs). Here, there are 3 layers.
+
++ **kernel_size**: The size of the convolving kernel for a convolutional neural network (CNN). It was set to 3.
+
++ **num_channels**: The number of channels produced by the convolution, essentially the number of output filters in the convolution. It was 16 in this model.
+
++ **stride**: The stride of the convolution. It was set to 1, which means the filter moves one pixel at a time during the convolution.
+
+> Model architecture
 ![image](https://github.com/HwnagYujeong0808/AI_Team5/assets/66208800/9d4490a1-ce43-4353-8476-01dccbbe76d4)
+
+**STEP 1**
+- Using the ETRI dataset to train a audio Emotion classification model.
+- Emotion Classification model Type : LSTM, 1D CNN, LSTM with Attention, GRU
+
+**STEP 2**
+- The MFCC extracted from the voice in the AI Hub YouTube video was then combined with the output tensors inferred by the three trained models into a single vector
+
+**STEP 3**
+- For video image feature extraction, pre-trained ViT models are used to perform feature exraction on an image frame-by-frame basis
+
+**STEP 4**
+- Finally **LSTM-based Multimodal Highlight Detection Model
+using Video and Audio Emotional Information** combines feature
+vectors extracted from audio and video to detect highlights in every
+second frame of the video.
 
 
 ## Presentation of results
-
+![image](https://github.com/HwnagYujeong0808/AI_Team5/assets/66208800/039cb792-05aa-4196-8326-65510757be32)
++ From left, Audio highlight extraction model, Multimodal highlight extraction 
+  
 ## Analysis of results
 
+- Compared to audio-only highlight extraction, the difference in performance graphs between RNNs and CNNs is almost eliminated, and there is a modest increase in accuracy. In particular, for LSTM and GRU with Attention, the threshold for reversing the f1 score based on precision is higher than for LSTM alone. This may not be a direct result of applying images, but it may be due to the structure of capturing long-term dependencies.
+
 ## Any insights and discussions relevant to the project
+- We used deep learning models LSTM, CNN, Attention mechanisms, and GRU to classify emotions, which are the inputs for audio highlight extraction. However, we can perform better using a more recent approach, Wav2Vec 2.0. It is a speech representation model developed by Facebook AI Research (FAIR). It is designed for unsupervised pre-training of speech representations that can later be fine-tuned for various downstream speech-related tasks such as automatic speech recognition (ASR) and speaker identification. At its core, it uses an encoder that extracts features and a transformer that masks the current location and can infer the masked location from surrounding data. It is a type of self-supervised learning that learns in the direction of minimizing contrast loss, which makes latent speech representations and context representations similar.
 
 ## References
++ F. Qi, X. Yang and C. Xu, "Emotion Knowledge Driven Video Highlight Detection," in IEEE Transactions on Multimedia, vol. 23, pp. 3999-4013, 2021.
+
 
 ## Extra credit
-
 ### Member's contribution statement
 
-+ Please describe each member's contribution in detail. Blind peer review will be conducted after the final presentation.
++ **Yujung Hwang**
+  + Developed audio highlight classification models.
+  + Fine-tuned video highlight classification models.
+
++ **Yooseok Lee**
+  + Led the multimodal model development.
+  + Designed the model architecture.
+
++ **Jihoon Moon**
+  + Built four audio emotion classification models.
+  + Documented and explained the project code.
 
 
 ### The Github repository with the commit history
