@@ -63,6 +63,7 @@ From the perspective of video content creators, manually editing long videos whi
 + **stride**: The stride of the convolution. It was set to 1, which means the filter moves one pixel at a time during the convolution.
 
 > Model architecture
+
 ![image](https://github.com/HwnagYujeong0808/AI_Team5/assets/66208800/9d4490a1-ce43-4353-8476-01dccbbe76d4)
 
 **STEP 1**
