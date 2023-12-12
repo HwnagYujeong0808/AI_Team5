@@ -104,7 +104,10 @@ second frame of the video.
 - Compared to audio-only highlight extraction, the difference in performance graphs between RNNs and CNNs is almost eliminated, and there is a modest increase in accuracy. In particular, for LSTM and GRU with Attention, the threshold for reversing the f1 score based on precision is higher than for LSTM alone. This may not be a direct result of applying images, but it may be due to the structure of capturing long-term dependencies.
 
 ## Any insights and discussions relevant to the project
-- We used deep learning models LSTM, CNN, Attention mechanisms, and GRU to classify emotions, which are the inputs for audio highlight extraction. However, we can perform better using a more recent approach, Wav2Vec 2.0. It is a speech representation model developed by Facebook AI Research (FAIR). It is designed for unsupervised pre-training of speech representations that can later be fine-tuned for various downstream speech-related tasks such as automatic speech recognition (ASR) and speaker identification. At its core, it uses an encoder that extracts features and a transformer that masks the current location and can infer the masked location from surrounding data. It is a type of self-supervised learning that learns in the direction of minimizing contrast loss, which makes latent speech representations and context representations similar.
+- Since we have learned LSTM, CNN, Attention mechanism, and GRU, we have used deep learning model LSTM, CNN, LSTM with attention, and GRU to classify the emotion an input of audio highlight extraction. However, using Wav2Vec 2.0, a state-of-the-art method, would show a better performance. It is a speech representation model developed by Facebook AI Research (FAIR). It is designed for unsupervised pre-training of speech representations, which can later be fine-tuned for various downstream speech-related tasks such as automatic speech recognition (ASR) and speaker identification.
+
+![image](https://github.com/HwnagYujeong0808/AI_Team5/assets/66208800/a225a6a5-aea2-44cf-9a3a-9b855cc8829f)
+
 
 ## References
 + F. Qi, X. Yang and C. Xu, "Emotion Knowledge Driven Video Highlight Detection," in IEEE Transactions on Multimedia, vol. 23, pp. 3999-4013, 2021.
