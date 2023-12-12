@@ -124,6 +124,3 @@ second frame of the video.
 + **Jihoon Moon**
   + Built four audio emotion classification models.
   + Documented and explained the project code.
-
-
-### The Github repository with the commit history
